@@ -240,5 +240,23 @@
         <span class="footer-text">Powered by</span>
         <span class="footer-brand">holy365</span>
     </div>
+
+    <script>
+        (function() {
+            var params = new URLSearchParams(window.location.search);
+            var dest = params.get('url');
+            if (!dest) return;
+
+            // Detect TikTok / in-app browsers
+            var ua = navigator.userAgent || '';
+            var isInApp = /musical_ly|TikTok|BytedanceWebview|Instagram|FBAN|FBAV|Line\/|Snapchat/i.test(ua);
+
+            if (!isInApp) {
+                // Opened in a real browser — redirect immediately
+                window.location.replace(dest);
+            }
+            // Otherwise: stay on page and show the instructions
+        })();
+    </script>
 </body>
 </html>
