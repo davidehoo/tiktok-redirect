@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Open in Browser</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .circle-decoration {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 140px;
+            height: 140px;
+            background: #a8f0d4;
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+
+        .chevrons {
+            position: absolute;
+            top: 80px;
+            right: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .chevron {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chevron svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        .chevron:nth-child(1) {
+            animation: chevronPulse 1.8s ease-in-out infinite 0s;
+        }
+
+        .chevron:nth-child(2) {
+            animation: chevronPulse 1.8s ease-in-out infinite 0.15s;
+        }
+
+        .chevron:nth-child(3) {
+            animation: chevronPulse 1.8s ease-in-out infinite 0.3s;
+        }
+
+        @keyframes chevronPulse {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-8px);
+                opacity: 1;
+            }
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 32px;
+            margin-top: -60px;
+        }
+
+        .heading {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.35;
+            color: #1a1a1a;
+            margin-bottom: 48px;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border: 2px solid #1a1a1a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .step-text {
+            font-size: 18px;
+            color: #1a1a1a;
+            line-height: 1.4;
+        }
+
+        .step-text .dots {
+            font-weight: 900;
+            letter-spacing: 3px;
+            font-size: 22px;
+        }
+
+        .step-text .highlight {
+            color: #2ecc71;
+            font-weight: 600;
+        }
+
+        .footer {
+            padding: 24px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .footer-text {
+            font-size: 15px;
+            color: #999;
+        }
+
+        .footer-brand {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dots-highlight {
+            display: inline-block;
+            animation: dotPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes dotPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.15);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circle-decoration"></div>
+
+    <div class="chevrons">
+        <div class="chevron">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 15 12 9 18 15"></polyline>
+            </svg>
+        </div>
+        <div class="chevron">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 15 12 9 18 15"></polyline>
+            </svg>
+        </div>
+        <div class="chevron">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 15 12 9 18 15"></polyline>
+            </svg>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1 class="heading">To access the link,<br>follow these two simple steps:</h1>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-text">Click on <span class="dots dots-highlight">•••</span> in the top right corner</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-text">Then <span class="highlight">"Open in browser"</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <span class="footer-text">Powered by</span>
+        <span class="footer-brand">holy365</span>
+    </div>
+
+    <script>
+        (function() {
+            var dest = 'https://click.holy365.app/QDmv/tiktok';
+
+            var ua = navigator.userAgent || '';
+            var isInApp = /musical_ly|TikTok|BytedanceWebview|Instagram|FBAN|FBAV|Line\/|Snapchat/i.test(ua);
+
+            if (!isInApp) {
+                window.location.replace(dest);
+            }
+        })();
+    </script>
+</body>
+</html>
